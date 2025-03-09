@@ -1,0 +1,40 @@
+/* option.css */
+
+.option-div {
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #fff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+  }
+  
+  div[class^="option"] {
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    line-height: 20px; /* Ustawienie tekstu na środku pionowo */
+    color: white; /* Ustawienie koloru tekstu na biały dla lepszej widoczności */
+   
+  }
+  
+  /* Dodaj więcej klas dla każdej podkategorii */
+
+/* Przypisanie różnych kolorów tła dla każdego z 10 <div> */
+.option1 { background-color: #FF5733; } /* czerwony */
+.option2 { background-color: #33FF57; } /* zielony */
+.option13 { background-color: #3357FF; } /* niebieski */
+.option4 { background-color: #FF33A8; } /* różowy */
+.option5 { background-color: #FFBD33; } /* pomarańczowy */
+.option6 { background-color: #33FFF3; } /* turkusowy */
+.option7 { background-color: #8D33FF; } /* fioletowy */
+.option8 { background-color: #FF3380; } /* jasny czerwony */
+.option9 { background-color: #33FF8D; } /* jasny zielony */
+.option10 { background-color: #FF5733; } /* brązowy */  

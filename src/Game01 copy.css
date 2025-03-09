@@ -1,0 +1,116 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom, #0d1b2a, #1b263b, #415a77);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.game01 {
+  max-width: 400px;
+  margin: auto;
+}
+
+.balance {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.reels-container {
+  position: relative;
+  margin: 20px 0;
+}
+
+.reels {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.reel {
+  width: 90px;
+  height: 300px;
+  overflow: hidden;
+  border: 3px solid #fff;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, #000, #333);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.symbols {
+  display: flex;
+  flex-direction: column;
+  transform: translateY(0);
+}
+
+.symbol {
+  font-size: 50px;
+  text-align: center;
+  height: 100px;
+  line-height: 100px;
+}
+
+.symbol.highlighted {
+  background: radial-gradient(circle, rgba(255,255,0,1) 0%, rgba(255,165,0,1) 60%, rgba(255,69,0,1) 100%);
+  color: black;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 0, 0.8), 0 0 30px rgba(255, 165, 0, 0.8), 0 0 40px rgba(255, 69, 0, 0.8);
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(255, 255, 0, 0.8), 0 0 30px rgba(255, 165, 0, 0.8), 0 0 40px rgba(255, 69, 0, 0.8);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(255, 255, 0, 1), 0 0 40px rgba(255, 165, 0, 1), 0 0 50px rgba(255, 69, 0, 1);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(255, 255, 0, 0.8), 0 0 30px rgba(255, 165, 0, 0.8), 0 0 40px rgba(255, 69, 0, 0.8);
+  }
+}
+
+.spin-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  margin-top: 20px;
+  cursor: pointer;
+  background: #4caf50;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.spin-button:hover {
+  transform: scale(1.1);
+}
+
+.spin-button.disabled {
+  cursor: not-allowed;
+  background: #888;
+}
+
+.win-message {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4caf50;
+  margin-top: 20px;
+}
+
+.spin-button.hidden {
+  opacity: 0;
+  transform: scale(0);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.spin-button.visible {
+  opacity: 1;
+  transform: scale(1);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}

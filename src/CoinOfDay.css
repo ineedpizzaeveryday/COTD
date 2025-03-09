@@ -1,0 +1,62 @@
+.coin-of-day {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #f9f9f9;
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  .coin-details p {
+    margin: 5px 0;
+  }
+  
+  .coin-details a {
+    color: #0073e6;
+    text-decoration: none;
+  }
+  
+  .coin-details a:hover {
+    text-decoration: underline;
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background: #0073e6;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+
+  .coin-details {
+    transition: filter 0.5s ease;
+  }
+    
+  
+  .coin-details.blurred {
+    filter: blur(8px);
+    pointer-events: none;
+  }
+
+  .blurred {
+    filter: blur(5px);
+  }
+  
+  .blur {
+    filter: blur(5px);
+    pointer-events: none;
+    user-select: none;
+  }
+  
+  .no-blur {
+    filter: none;
+    pointer-events: auto;
+    user-select: auto;
+  }

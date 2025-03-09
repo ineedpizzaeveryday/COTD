@@ -1,0 +1,34 @@
+{
+    "Football": [
+      "Team A",
+      "Team B",
+      "Team C",
+      "Team D",
+      "Team E",
+      "Team F",
+      "Team G",
+      "Team H",
+      "Team I",
+      "Team J"
+    ],
+    "Soccer": [
+      "Juventus",
+      "Barcelona",
+      "AC Milan",
+      "Real Madrid",
+      "Inter Milan",
+      "Bayern Munich",
+      "Borussia Dortmund",
+      "Manchester City",
+      "Liverpool",
+      "Arsenal",
+      "PSG",
+      "Manchester United",
+      "Chelsea London",
+      "FC Porto",
+      "Tottenham Hotspur",
+      "Ajax Amsterdam",
+      "AS Roma"
+    ]
+
+  }

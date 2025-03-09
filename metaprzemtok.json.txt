@@ -1,0 +1,9 @@
+{
+  "name": "Dziurky",
+  "symbol": "Holky",
+  "description": "Holky2 first test of the token",
+  "image": "https://red-broad-chicken-440.mypinata.cloud/ipfs/bafybeiggctmjob4fufblk474qmvuj2s2goffeskdrika2cbfacpjfwi2tu",
+  "attributes": [
+    { "trait_type": "Category", "value": "Utility" }
+  ]
+}

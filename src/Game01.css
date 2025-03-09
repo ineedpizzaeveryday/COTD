@@ -1,0 +1,130 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom, #0d1b2a, #1b263b, #415a77);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.game01 {
+  max-width: 400px;
+  margin: auto;
+}
+
+.reels-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.reel {
+  width: 90px;
+  height: 300px;
+  overflow: hidden;
+  border: 3px solid #fff;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, #000, #333);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.symbol {
+  font-size: 50px;
+  text-align: center;
+  height: 100px;
+  line-height: 100px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.symbol.highlighted {
+  background: radial-gradient(circle, rgba(255,255,0,1) 0%, rgba(255,165,0,1) 60%, rgba(255,69,0,1) 100%);
+  color: black;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 0, 0.8), 0 0 30px rgba(255, 165, 0, 0.8), 0 0 40px rgba(255, 69, 0, 0.8);
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(255, 255, 0, 0.8), 0 0 30px rgba(255, 165, 0, 0.8), 0 0 40px rgba(255, 69, 0, 0.8);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(255, 255, 0, 1), 0 0 40px rgba(255, 165, 0, 1), 0 0 50px rgba(255, 69, 0, 1);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(255, 255, 0, 0.8), 0 0 30px rgba(255, 165, 0, 0.8), 0 0 40px rgba(255, 69, 0, 0.8);
+  }
+}
+
+.spin-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  margin-top: 20px;
+  cursor: pointer;
+  background: #4caf50;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.spin-button:hover {
+  transform: scale(1.1);
+}
+
+.spin-button.disabled {
+  cursor: not-allowed;
+  background: #888;
+}
+
+.win-message {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4caf50;
+  margin-top: 20px;
+}
+
+.spin-button {
+  background-color: grey;
+  color: white;
+  cursor: not-allowed;
+  opacity: 0.5;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.spin-button.active {
+  background-color: green;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.spin-button.disabled {
+  background-color: grey;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.transaction-message {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 128, 0, 0.9);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  animation: fadeOut 1s ease-out 1s forwards;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}

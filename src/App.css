@@ -1,0 +1,202 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+header {
+  height: 10vh; /* 10% wysokości widoku */
+  width: 90vw; /* 80% szerokości widoku */
+  margin: 0;
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+/* Main Content */
+main {
+  height: 45vh; /* 55% wysokości widoku */
+  width: 80vw; /* 80% szerokości widoku */
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+}
+
+.left-column, .right-column {
+  flex: 1;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.left-column {
+  background-color: #f0f0f0;
+}
+
+.right-column {
+  background-color: #ffffff;
+}
+
+
+/* Usunięcie marginesu między banerem a resztą aplikacji */
+.banner {
+  position: absolute;
+  top: 20vh; 
+  left: 0;
+  width: 15vw; /* Maksymalnie 20% szerokości ekranu */
+  height: 80vh; /* Maksymalnie 80% wysokości ekranu */
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin: 0; /* Brak marginesów */
+  padding: 0; /* Brak wewnętrznego odstępu */
+  box-sizing: border-box; /* Ustawienie, aby padding nie wpływał na rozmiar */
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.content {
+  display: flex;
+  margin: 0; /* Brak marginesów */
+  padding: 0;
+  margin-left: 10vw; /* Ustaw miejsce na banner */
+  width: calc(80vw - 20px); /* Dopasowanie szerokości zawartości */
+  box-sizing: border-box;
+}
+
+
+
+main {
+  display: flex;
+  margin: 0; /* Usuń marginesy */
+  padding: 0; /* Usuń odstępy */
+  width: 100vw; /* Dopasowanie szerokości do okna */
+  height: calc(100vh - 10vh - 5vh); 
+}
+
+/* Footer */
+footer {
+  height: 5vh; /* 5% wysokości widoku */
+  width: 100vw; /* 100% szerokości widoku */
+  margin: 0;
+  background-color: #222;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/* Game Section (previously Footer) */
+.game {
+  height: 35vh; /* 25% wysokości widoku */
+  width: 80vw; /* 80% szerokości widoku */
+  margin: 0 auto;
+  margin-left: 5vw; /* Wyrównanie do środka */
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* New Footer Section */
+footer {
+  height: 5vh; /* 5% wysokości widoku */
+  width: 80vw; /* 80% szerokości widoku */
+  margin: 0 auto;
+  margin-left: 5vw; /* Wyrównanie do środka */
+  background-color: #222;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.logo {
+  font-size: 24px;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Main Content Area Styling */
+.left-column h2,
+.right-column h2 {
+  margin-bottom: 10px;
+}
+
+/* Game Section Links */
+.game a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Footer Links */
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.info-section {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: filter 0.3s ease-in-out;
+}
+
+/* Blur effect */
+.info-section.blur {
+  filter: blur(10px);
+  opacity: 0.5;
+  pointer-events: none; /* Nie umożliwia interakcji z elementami */
+}
+
+/* Show after clicking process */
+.info-section.show {
+  filter: none;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+.lottery-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.presale {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

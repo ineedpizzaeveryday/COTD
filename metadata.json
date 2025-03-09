@@ -1,0 +1,12 @@
+{
+    "name": "DZIURKY",
+    "symbol": "DZIURY",
+    "description": "Holky2 first test of the toke",
+    "image": "https://hawk2ah.xyz/hool.png",
+    "attributes": [
+      {
+        "trait_type": "Item",
+        "value": "Developer Portal"
+      }
+    ]
+  }
