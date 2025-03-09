@@ -4,6 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "postinstall": "npm config set python python3",
+     "install": "npm ci",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
