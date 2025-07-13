@@ -14,5 +14,6 @@ export default defineConfig({
   define: {
     global: {},
   },
+  base: '/', // Ustaw na '/' dla Vercel
 })
 

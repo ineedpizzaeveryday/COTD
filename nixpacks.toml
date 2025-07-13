@@ -1,8 +1,0 @@
-[phases.setup]
-nixPkgs = ['python39', 'nodejs-18_x']  # Dodaj Pythona i Node.js
-
-[phases.build]
-cmds = ['npm ci']  # Komenda budowania
-
-[start]
-cmd = 'npm start'  # Dostosuj do swojego projektu
