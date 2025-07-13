@@ -13,13 +13,13 @@ export default function Ranking({ address, connection }) {
   const coefBalance = 1.0;
   const coefShopping = 2.2;
 
+  // Ustaw API_URL z zmiennej środowiskowej
+  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+
   const fetchRanking = async () => {
     try {
-      const response = await fetch('http://localhost:3001/ranking');
-      if (!response.ok) {
-        throw new Error('Błąd podczas pobierania rankingu');
-      }
-      const data = await response.json();
+      const response = await axios.get(`${API_URL}/ranking`);
+      const data = response.data;
 
       const updatedData = data.map((entry) => ({
         ...entry,
@@ -36,17 +36,11 @@ export default function Ranking({ address, connection }) {
     if (!address || balance <= 0 || !username.trim()) return;
 
     try {
-      const response = await fetch('http://localhost:3001/ranking', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ address, balance, username }),
+      const response = await axios.post(`${API_URL}/ranking`, {
+        address,
+        balance,
+        username,
       });
-
-      if (!response.ok) {
-        throw new Error('Błąd podczas dodawania użytkownika do rankingu');
-      }
 
       fetchRanking();
       setUsername('');
@@ -113,7 +107,7 @@ export default function Ranking({ address, connection }) {
       console.log('Transaction sent:', txid);
       alert('SOL wysłane pomyślnie!');
 
-      await axios.post('http://localhost:3001/addTransaction', { signature: txid });
+      await axios.post(`${API_URL}/addTransaction`, { signature: txid });
       fetchRanking();
     } catch (error) {
       console.error('Transaction error:', error.message || error);
@@ -128,18 +122,11 @@ export default function Ranking({ address, connection }) {
 
     try {
       await sendSol(lamports);
-      
-      const response = await fetch('http://localhost:3001/shopping', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ address, points }),
-      });
 
-      if (!response.ok) {
-        throw new Error('Błąd podczas aktualizacji shopping');
-      }
+      const response = await axios.post(`${API_URL}/shopping`, {
+        address,
+        points,
+      });
 
       fetchRanking();
     } catch (error) {
