@@ -16,7 +16,7 @@ import rewardsRouter from './rewards.js';
 
 
 const app = express();
-const port = 3001;
+const PORT = process.env.PORT || 3000;
 const dbPath = path.resolve('./ranking.db');
 const backupPath = path.resolve('./ranking-backup.db');
 
@@ -199,8 +199,8 @@ app.post('/shopping', (req, res) => {
   });
 });
 
-app.listen(port, () => {
-  console.log(`Serwer działa na porcie ${port}`);
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
 
 app.get('/coinOfDay', (req, res) => {
