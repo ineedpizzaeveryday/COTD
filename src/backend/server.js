@@ -79,6 +79,7 @@ const calculateScore = (balance, shopping) => {
 };
 
 // Endpointy
+
 app.get('/check-coindata', (req, res) => {
   const filePath = path.resolve('./data/coindata.json');
   if (fs.existsSync(filePath)) {
