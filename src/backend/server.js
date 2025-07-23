@@ -15,6 +15,13 @@ const app = express();
 const dbPath = path.resolve('./data/ranking.db');
 const backupPath = path.resolve('./data/ranking-backup.db');
 
+const PORT = process.env.PORT || 10000;
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+
+
 // Middleware
 app.use(cors({
   origin: ['https://cotd-one.vercel.app', 'http://localhost:5173'],
@@ -239,8 +246,4 @@ app.post('/reset-coin-of-day', (req, res) => {
   });
 });
 
-// Uruchom serwer tylko raz
-const PORT = process.env.PORT || 10000;
-app.listen(PORT, () => {
-  console.log(`Serwer działa na porcie ${PORT}`);
-});
+
