@@ -97,6 +97,13 @@ app.get('/check-coindata', (req, res) => {
   }
 });
 
+app.get('/debug-files', (req, res) => {
+  fs.readdir(path.resolve('./data'), (err, files) => {
+    if (err) return res.status(500).json({ error: 'Cannot read directory' });
+    res.json({ files });
+  });
+});
+
 
 app.post('/addTransaction', addRandomTransaction);
 app.get('/transactionCount', getTransactionCount);
