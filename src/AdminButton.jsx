@@ -3,6 +3,7 @@ import axios from 'axios';
 
 const API_URL = process.env.REACT_APP_API_URL || 'https://backend-cotd.onrender.com';
 
+
 export default function AdminButton() {
   const refreshBalances = async () => {
     try {
@@ -20,19 +21,19 @@ export default function AdminButton() {
   };
 
   const resetCoinOfDay = async () => {
-    try {
-      const response = await axios.post(`${API_URL}/reset-coin-of-day`, {}, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem('token')}`,
-        },
-      });
-      alert('Moneta dnia została zresetowana i zablokowana!');
-      console.log('Odpowiedź serwera:', response.data);
-    } catch (error) {
-      console.error('Błąd podczas resetowania monety dnia:', error);
-      alert('Wystąpił problem podczas resetowania monety dnia.');
-    }
-  };
+  try {
+    const response = await axios.post(`${API_URL}/reset-coin-of-the-day`, {}, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+    });
+    alert('Moneta dnia została zresetowana i zablokowana!');
+    console.log('Odpowiedź serwera:', response.data);
+  } catch (error) {
+    console.error('Błąd podczas resetowania monety dnia:', error);
+    alert('Wystąpił problem podczas resetowania monety dnia.');
+  }
+};
 
   return (
     <div style={{ padding: '20px', textAlign: 'center' }}>

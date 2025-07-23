@@ -82,6 +82,7 @@ const calculateScore = (balance, shopping) => {
 
 app.get('/check-coindata', (req, res) => {
   const filePath = path.resolve('./data/coindata.json');
+  console.log('Checking file at:', filePath); // Log the path
   if (fs.existsSync(filePath)) {
     fs.readFile(filePath, 'utf8', (err, data) => {
       if (err) {
@@ -91,6 +92,7 @@ app.get('/check-coindata', (req, res) => {
       res.json({ success: true, exists: true, content: data });
     });
   } else {
+    console.log('File does not exist:', filePath); // Log missing file
     res.status(404).json({ success: false, exists: false, error: 'Plik coindata.json nie istnieje', path: filePath });
   }
 });
