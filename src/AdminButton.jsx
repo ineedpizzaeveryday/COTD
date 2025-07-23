@@ -1,20 +1,18 @@
 import React from 'react';
 import axios from 'axios';
 
+const API_URL = process.env.REACT_APP_API_URL || 'https://backend-cotd.onrender.com';
+
 export default function AdminButton() {
   const refreshBalances = async () => {
     try {
-      const response = await fetch('https://backend-cotd.onrender.com/refresh-balances', {
-        method: 'POST',
+      const response = await axios.post(`${API_URL}/refresh-balances`, {}, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`, // Dodaj jeśli wymagana autoryzacja
+        },
       });
-
-      if (!response.ok) {
-        throw new Error('Błąd podczas odświeżania sald');
-      }
-
-      const data = await response.json();
       alert('Saldo zostało pomyślnie odświeżone!');
-      console.log('Zaktualizowane dane:', data.updated);
+      console.log('Zaktualizowane dane:', response.data.updated);
     } catch (error) {
       console.error('Błąd podczas odświeżania sald:', error);
       alert('Wystąpił problem podczas odświeżania sald.');
@@ -23,12 +21,13 @@ export default function AdminButton() {
 
   const resetCoinOfDay = async () => {
     try {
-      const response = await axios.post('https://backend-cotd.onrender.com/reset-coin-of-day');
-      if (response.status === 200) {
-        alert('Moneta dnia została zresetowana i zablokowana!');
-      } else {
-        alert('Wystąpił problem podczas resetowania monety dnia.');
-      }
+      const response = await axios.post(`${API_URL}/reset-coin-of-day`, {}, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+      });
+      alert('Moneta dnia została zresetowana i zablokowana!');
+      console.log('Odpowiedź serwera:', response.data);
     } catch (error) {
       console.error('Błąd podczas resetowania monety dnia:', error);
       alert('Wystąpił problem podczas resetowania monety dnia.');

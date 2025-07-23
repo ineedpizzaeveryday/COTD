@@ -79,6 +79,22 @@ const calculateScore = (balance, shopping) => {
 };
 
 // Endpointy
+app.get('/check-coindata', (req, res) => {
+  const filePath = path.resolve('./data/coindata.json');
+  if (fs.existsSync(filePath)) {
+    fs.readFile(filePath, 'utf8', (err, data) => {
+      if (err) {
+        console.error('Błąd odczytu pliku:', err.message);
+        return res.status(500).json({ success: false, error: 'Nie można odczytać pliku', details: err.message });
+      }
+      res.json({ success: true, exists: true, content: data });
+    });
+  } else {
+    res.status(404).json({ success: false, exists: false, error: 'Plik coindata.json nie istnieje', path: filePath });
+  }
+});
+
+
 app.post('/addTransaction', addRandomTransaction);
 app.get('/transactionCount', getTransactionCount);
 app.post('/api/lottery/add', addLotteryTransaction);
