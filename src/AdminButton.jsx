@@ -4,7 +4,7 @@ import axios from 'axios';
 export default function AdminButton() {
   const refreshBalances = async () => {
     try {
-      const response = await fetch('http://localhost:3001/refresh-balances', {
+      const response = await fetch('https://backend-cotd.onrender.com/refresh-balances', {
         method: 'POST',
       });
 
@@ -23,7 +23,7 @@ export default function AdminButton() {
 
   const resetCoinOfDay = async () => {
     try {
-      const response = await axios.post('http://localhost:3001/reset-coin-of-day');
+      const response = await axios.post('https://backend-cotd.onrender.com/reset-coin-of-day');
       if (response.status === 200) {
         alert('Moneta dnia została zresetowana i zablokowana!');
       } else {
