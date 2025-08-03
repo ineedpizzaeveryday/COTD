@@ -22,7 +22,7 @@ export default function AdminButton() {
 
   const resetCoinOfDay = async () => {
   try {
-    const response = await axios.post(`${API_URL}/reset-coin-of-the-day`, {}, {
+    const response = await axios.post(`${API_URL}/reset-coin-of-day`, {}, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
@@ -70,3 +70,4 @@ export default function AdminButton() {
     </div>
   );
 }
+

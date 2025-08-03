@@ -14,6 +14,8 @@ import Ranking from './Ranking.jsx';
 import Game01 from './Game01.jsx';
 import MagicBox from './MagicBox.jsx';
 import Presale from './Presale.jsx';
+import Alpha from './Alpha.jsx';
+
 window.Buffer = Buffer;
 
 // Dynamiczny import komponentu AdminButton
@@ -66,54 +68,54 @@ export default function App() {
   }, [address, connection]);
 
   
-  const Home = () => (
-    <div className="app-container">
-      <header className="header">
-        <div className="logo">Logo</div>
-        <nav className="nav">
-          <appkit-button />
-          <appkit-network-button />
-        </nav>
-      </header>
-  
-      <main className="main">
-        <div className="banner">
-          <img src="/path-to-your-banner-image.jpg" alt="Banner" />
-        </div>
-  
-        <div className="content">
-          <div className="left-column">
-            <CoinOfDay address={address} connection={connection} />
-          </div>
-  
-          <div className="right-column">
-            <h2>Your Lucky Box</h2>
-            <Game01 connection={connection} address={address} />
-          </div>
-        </div>
-      </main>
-  
-      <div className="lottery">
-        <Lottery address={address} connection={connection} />
-        <Presale />
-        <MagicBox address={address} connection={connection} />
-        <Ranking address={address} connection={connection} />
+ const Home = () => (
+  <div className="app-container">
+    <header className="header">
+      <div className="logo">Logo</div>
+      <nav className="nav">
+        <appkit-button />
+        <appkit-network-button />
+      </nav>
+    </header>
+
+    <main className="main">
+      <div className="banner">
+        <img src="/path-to-your-banner-image.jpg" alt="Banner" />
       </div>
-  
-      <footer className="footer">
-        <a href="#contact">Contact</a>
-        <a href="#help">Help</a>
-        <a href="#privacy">Privacy</a>
-      </footer>
-      <p>Work started 04.11.2024</p>
+
+      <div className="content">
+        <div className="left-column">
+          <CoinOfDay address={address} connection={connection} />
+          <Alpha />
+        </div>
+
+        <div className="right-column">
+          <h2>Your Lucky Box</h2>
+          <Game01 connection={connection} address={address} />
+        </div>
+      </div>
+    </main>
+
+    <div className="lottery" id="lottery-section">
+      <Lottery address={address} connection={connection} />
+      <Presale />
+      <MagicBox address={address} connection={connection} />
+      <Ranking address={address} connection={connection} />
     </div>
-  );
-  
+
+    <footer className="footer">
+      <a href="#contact">Contact</a>
+      <a href="#help">Help</a>
+      <a href="#privacy">Privacy</a>
+    </footer>
+    <p>Work started 04.11.2024</p>
+  </div>
+);
 
 
   // Główna logika trasowania
   return (
-    <Router>
+ <Router>
       <Suspense fallback={<p>Ładowanie...</p>}>
         <Routes>
           <Route path="/" element={<Home />} />

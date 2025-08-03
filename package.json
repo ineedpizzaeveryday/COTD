@@ -4,7 +4,6 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-  
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
@@ -18,9 +17,9 @@
     "@solana/web3.js": "^1.98.0",
     "@wagmi/core": "^2.16.0",
     "@web3modal/solana": "^5.1.11",
+    "assert": "^2.1.0",
     "axios": "^1.7.9",
     "body-parser": "^1.20.3",
-    "buffer": "^6.0.3",
     "cors": "^2.8.5",
     "crypto": "^1.0.0",
     "dotenv": "^16.4.7",
@@ -34,7 +33,7 @@
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.1.1",
     "sqlite3": "^5.1.7",
-    "stream-browserify": "^3.0.0",
+    "util": "^0.12.5",
     "wagmi": "^2.14.1"
   },
   "devDependencies": {
@@ -42,12 +41,16 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
+    "buffer": "^6.0.3",
     "crypto-browserify": "^3.12.1",
     "eslint": "^9.9.0",
     "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.9",
     "globals": "^15.9.0",
+    "process": "^0.11.10",
+    "rollup-plugin-node-polyfills": "^0.2.1",
+    "stream-browserify": "^3.0.0",
     "vite": "^5.4.1"
   },
   "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",

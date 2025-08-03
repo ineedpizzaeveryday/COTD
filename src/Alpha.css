@@ -1,0 +1,50 @@
+.alpha-container {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+}
+
+.alpha-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.telegram-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.alpha-header h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 0;
+}
+
+.alpha-description {
+  font-size: 1rem;
+  color: #666;
+  margin: 10px 0;
+}
+
+.alpha-instructions {
+  padding-left: 20px;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.alpha-instructions li {
+  margin-bottom: 8px;
+}
+
+.alpha-instructions a {
+  color: #007bff; /* Bootstrap-like link color */
+  text-decoration: none;
+}
+
+.alpha-instructions a:hover {
+  text-decoration: underline;
+}

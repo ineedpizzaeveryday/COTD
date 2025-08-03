@@ -1,19 +1,22 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-
-
+import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      crypto: 'crypto-browserify',
       stream: 'stream-browserify',
+      buffer: 'buffer',
+      process: path.resolve(__dirname, 'node_modules/process/browser.js'), // ✅ pełna ścieżka
+      crypto: 'crypto-browserify',
     },
   },
   define: {
-    global: {},
+    global: 'window',
+    'process.env': {},
   },
-  base: '/', // Ustaw na '/' dla Vercel
+  optimizeDeps: {
+    include: ['buffer', 'process', 'stream-browserify', 'crypto-browserify'],
+  },
 })
-
